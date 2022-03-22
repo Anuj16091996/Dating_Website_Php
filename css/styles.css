@@ -1,0 +1,53 @@
+#showContent{
+    font-size: 50px;
+    text-align: center;
+}
+.overlay {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0);
+    overflow-x: hidden;
+    transition: 0.5s;
+    display: none;
+
+}
+
+.overlay-content {
+    position: relative;
+    background: white;
+    top: 25%;
+    left: 35%;
+    width: 30%;
+    text-align: center;
+    margin-top: 30px;
+
+
+}
+#cookieconset{
+    padding: 10px;
+}
+
+
+.overlay a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 36px;
+    color: #818181;
+    display: block;
+    transition: 0.3s;
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1;
+}
+
+.overlay .closebtn {
+    position: absolute;
+    top: 20px;
+    right: 45px;
+    font-size: 60px;
+}

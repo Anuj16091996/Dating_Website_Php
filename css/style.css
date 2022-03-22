@@ -18,6 +18,8 @@ body a{
     background:#999;
     padding:2em 0;
 }
+
+
 /*----------------------------
 	The Navigation Menu
 -----------------------------*/
@@ -144,6 +146,8 @@ body a{
 .socials li:first-child {
     padding-left: 0;
 }
+
+
 .socials li {
     display:inline-block;
     padding: 0 5px;

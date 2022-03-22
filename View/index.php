@@ -2,13 +2,14 @@
 session_start();
 
 if (isset($_GET['logout'])) {
-    echo '<script>alert("Logout Scucesfull")</script>';
+    echo '<script>alert("Logout Successful")</script>';
 }
 
 if (isset($_GET['error'])) {
-    echo '<script>alert("Search First")</script>';
+    echo '<script>
+        document.getElementById("showContent").textContent="Log in First";
+        </script>';
 }
-
 
 ?>
 
@@ -19,17 +20,46 @@ if (isset($_GET['error'])) {
     <link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
     <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 
 <body>
+
+<div id="showContent"> </div>
 
 <div>
     <?php include_once("header.php"); ?>
 </div>
 
+
 <div>
     <?php include_once("Sections/banner.php"); ?>
 </div>
+
+<div id="myNav" class="overlay">
+  <a href="javascript:void(0)" class="closebtn"> </a>
+  <div class="overlay-content">
+    <div class="overlay-border">
+    <div >
+        <pre>
+<h4>Cookies</h4></pre>
+    </div>
+    <div id="cookieconset">
+     <h6>This website uses cookies in order to offer you the most releavnt information.
+     please accept cookies for optimal performance
+     </h6>
+        <br>
+     <button type="button" onclick="closeNav()" >Yes I accept!</button>
+     <br>
+
+    </div>
+
+    </div>
+
+  </div>
+</div>
+
 
 <div id="about_Us">
     <?php include_once("Sections/aboutUs.php"); ?>
@@ -39,7 +69,9 @@ if (isset($_GET['error'])) {
     <?php include_once("Sections/whyUs.php"); ?>
 </div>
 
+<script src="../JS/homepage.js"></script>
 </body>
+
 
 <footer id="con_Us">
     <?php include_once("footer.php"); ?>
