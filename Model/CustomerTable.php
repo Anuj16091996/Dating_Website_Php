@@ -4,9 +4,7 @@ require_once "Images.php";
 
 class CustomerTable
 {
-
-
-    public function CheckEmail(): bool
+    public static function CheckEmail(): bool
     {
         $stmt = new DatabaseConnection();
         $value = $stmt->GetConnect();
@@ -27,7 +25,7 @@ class CustomerTable
         return false;
     }
 
-    public function InsertIntoCustomer()
+    public static function InsertIntoCustomer()
     {
         $userEmail = $_SESSION["UserData"]['email'];
         $userPassword = $_SESSION["UserData"]['password'];
@@ -48,19 +46,16 @@ class CustomerTable
     }
 
 
-    public function CheckIDPassword($name, $password)
+    public static function CheckIDPassword($name)
     {
+
         $stmt = new DatabaseConnection();
         $value = $stmt->GetConnect();
-        $query = "select Email, Password from dating.customer where Email='$name' and Password='$password'";
+        $query = "select * from dating.customer where Email='$name' ";
         $result = $value->prepare($query);
         $result->execute();
         $result->setFetchMode(PDO::FETCH_ASSOC);
-        if ($result->fetchAll() == null) {
-            return false;
-        } else {
-            return true;
-        }
+        return $result->fetchAll();
 
     }
 
@@ -142,7 +137,7 @@ class CustomerTable
         $aboutUser = $_SESSION["ModifyUser"]["AboutUser"];
 
 
-        $query = "UPDATE  dating.customer set FirstName='$userFirstName',LastName='$userLastName',Age='$userAge',Sex='$userSex',AboutMe='$aboutUser',DateOfBirth='$userDob', City='$userCity' where Email='$userEmail'";
+        $query = "UPDATE dating.customer set FirstName='$userFirstName',LastName='$userLastName',Age='$userAge',Sex='$userSex',AboutMe='$aboutUser',DateOfBirth='$userDob', City='$userCity' where Email='$userEmail'";
         $result = $value->prepare($query);
         $result->execute();
         $result->setFetchMode(PDO::FETCH_ASSOC);
