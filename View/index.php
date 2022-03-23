@@ -10,7 +10,6 @@ if (isset($_GET['error'])) {
         document.getElementById("showContent").textContent="Log in First";
         </script>';
 }
-
 ?>
 
 <html>
@@ -38,7 +37,6 @@ if (isset($_GET['error'])) {
 </div>
 
 <div id="myNav" class="overlay">
-  <a href="javascript:void(0)" class="closebtn"> </a>
   <div class="overlay-content">
     <div class="overlay-border">
     <div >
