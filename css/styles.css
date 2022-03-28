@@ -1,6 +1,9 @@
 #showContent{
-    font-size: 50px;
-    text-align: center;
+    font-size: 20px;
+    text-align: left;
+    padding: 30px;
+    color: red;
+    display: none;
 }
 .overlay {
     height: 100%;

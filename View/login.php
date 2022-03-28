@@ -6,9 +6,7 @@ if (isset($_GET['userlog'])) {
 if (isset($_GET['error'])) {
     echo '<script>alert("Invalid Username Or Password")</script>';
 }
-if (isset($_GET['copyerror'])) {
-    echo '<script>alert("Log In First")</script>';
-}
+
 
 if (isset($_GET['nameerror'])) {
     echo '<script>alert("Invalid Name Try Again")</script>';
@@ -36,6 +34,7 @@ if (isset($_GET['imgtypes'])) {
 <head>
     <link href="../css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css'/>
     <link href="../css/style.css" rel='stylesheet' type='text/css'/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
     <link href="../css/font-awesome.css" rel="stylesheet">
@@ -45,7 +44,16 @@ if (isset($_GET['imgtypes'])) {
 <body>
 <?php include_once("header.php"); ?>
 
+<div id="showContent"> </div>
+<?php
+if (isset($_GET['copyerror'])) {
+    echo '<script>
+            document.getElementById("showContent").style.display="block";
+            document.getElementById("showContent").textContent="Log in First****";
+        </script>';
+}
 
+?>
 <div class="grid_3">
     <div class="container">
         <div class="breadcrumb1">
