@@ -1,43 +1,11 @@
-<?php
-if (isset($_GET['error'])) {
-    echo '<script>alert("Invalid Input")</script>';
-}
 
-if (isset($_GET['passworderror'])) {
-    echo '<script>alert("Invalid Password Try Again")</script>';
-}
-
-if (isset($_GET['nameerror'])) {
-    echo '<script>alert("Invalid Name Try Again")</script>';
-}
-if (isset($_GET['ageerror'])) {
-    echo '<script>alert("Invalid Age or DOB Try Again")</script>';
-}
-
-if (isset($_GET['emailExits'])) {
-    echo '<script>alert("Email Already Exists")</script>';
-}
-
-if (isset($_GET['city'])) {
-    echo '<script>alert("Invalid Input City")</script>';
-}
-
-if (isset($_GET['imgtype'])) {
-    echo '<script>alert("Invalid Image Type")</script>';
-}
-
-if (isset($_GET['imgtypes'])) {
-    echo '<script>alert("File To Big")</script>';
-}
-
-
-?>
 
 <html>
 
 <head>
     <link href="../css/bootstrap-3.1.1.min.css" rel='stylesheet' type='text/css'/>
     <link href="../css/style.css" rel='stylesheet' type='text/css'/>
+    <link href="../css/styles.css" rel="stylesheet" type="text/css">
     <link href='//fonts.googleapis.com/css?family=Oswald:300,400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Ubuntu:300,400,500,700' rel='stylesheet' type='text/css'>
     <link href="../css/font-awesome.css" rel="stylesheet">
@@ -46,7 +14,69 @@ if (isset($_GET['imgtypes'])) {
 
 <body>
 <?php include_once("header.php"); ?>
+<div id="showContent"> </div>
+<?php
+if (isset($_GET['error'])) {
+    echo '<script>
+            document.getElementById("showContent").style.display="block";
+            document.getElementById("showContent").textContent="Invalid Input";
+        </script>';
+}
 
+if (isset($_GET['passworderror'])) {
+    echo '<script>
+            document.getElementById("showContent").style.display="block";
+            document.getElementById("showContent").textContent="Invalid Password Try Again";
+        </script>';
+
+}
+
+if (isset($_GET['nameerror'])) {
+    echo '<script>
+            document.getElementById("showContent").style.display="block";
+            document.getElementById("showContent").textContent="Invalid Name Try Again";
+        </script>';
+
+}
+if (isset($_GET['ageerror'])) {
+    echo '<script>
+            document.getElementById("showContent").style.display="block";
+            document.getElementById("showContent").textContent="Invalid Age or DOB Try Again";
+        </script>';
+
+}
+
+if (isset($_GET['emailExits'])) {
+    echo '<script>
+            document.getElementById("showContent").style.display="block";
+            document.getElementById("showContent").textContent="Email Already Exists";
+        </script>';
+}
+
+if (isset($_GET['city'])) {
+    echo '<script>
+            document.getElementById("showContent").style.display="block";
+            document.getElementById("showContent").textContent="Invalid Input City";
+        </script>';
+
+}
+
+if (isset($_GET['imgtype'])) {
+    echo '<script>
+            document.getElementById("showContent").style.display="block";
+            document.getElementById("showContent").textContent="Invalid Image Type";
+        </script>';
+}
+
+if (isset($_GET['imgtypes'])) {
+    echo '<script>
+            document.getElementById("showContent").style.display="block";
+            document.getElementById("showContent").textContent="File To Big";
+        </script>';
+}
+
+
+?>
 <!--Form Code-->
 <div class="grid_3">
     <div class="container">

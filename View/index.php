@@ -59,9 +59,7 @@ if (isset($_GET['error'])) {
 </div>
 
 
-<div id="about_Us">
-    <?php include_once("Sections/aboutUs.php"); ?>
-</div>
+
 
 <div id="why_Us">
     <?php include_once("Sections/whyUs.php"); ?>
